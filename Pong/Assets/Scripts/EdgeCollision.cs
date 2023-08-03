@@ -6,6 +6,9 @@ public class EdgeCollision : MonoBehaviour
 {
     public string tagToCompare = "Ball";
 
+    public AudioSource audioSource;
+    public AudioClip clip;
+
     private ContactPoint2D _contactPoint;
     private BallController _ball;
 
@@ -19,6 +22,14 @@ public class EdgeCollision : MonoBehaviour
             _ball = collision.gameObject.GetComponent<BallController>();
 
             _ball.ReflectBall(_contactPoint.normal, _contactPoint.relativeVelocity);
+
+            if (audioSource != null && clip != null)
+            {
+                audioSource.clip = clip;
+                audioSource.Play();
+
+                audioSource.clip = null;
+            }
         }
     }
 }

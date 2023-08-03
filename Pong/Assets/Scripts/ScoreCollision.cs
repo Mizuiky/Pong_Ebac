@@ -4,17 +4,34 @@ using UnityEngine;
 
 public class ScoreCollision : MonoBehaviour
 {
-    
+    public AudioSource audioSource;
+    public AudioClip clip;
+
+    public BallController ball;
+
+    public string tagToCompare = "Ball";
+
+    public PlayerType player;
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if(collision.CompareTag(tagToCompare))
         {
-            BallController ball = collision.gameObject.GetComponent<BallController>();
+            ball = collision.gameObject.GetComponent<BallController>();
 
             if(ball != null)
             {
-                ball.ResetPosition();
+                GameManager.Instance.scoreController.SetPoints(player);
 
+                if (audioSource != null && clip != null)
+                {
+                    audioSource.clip = clip;
+                    audioSource.Play();
+
+                    audioSource.clip = null;
+                }
+
+                ball.ResetPosition();
             }
         }
     }

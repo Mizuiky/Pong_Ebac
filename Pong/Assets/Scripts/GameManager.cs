@@ -4,19 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private UIController uiController;
+    public UIController uiController;
 
-    private ScoreManager scoreManager;
-
-    public UIController UiController
-    {
-        get { return uiController;  }
-    }
-
-    public ScoreManager ScoreManager
-    {
-        get { return scoreManager;  }
-    }
+    public ScoreController scoreController;
 
     public static GameManager Instance;
 
@@ -29,7 +19,4 @@ public class GameManager : MonoBehaviour
 
         Destroy(Instance.gameObject);
     }
-
-
-
 }
