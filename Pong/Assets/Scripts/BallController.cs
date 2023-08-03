@@ -7,17 +7,13 @@ public class BallController : MonoBehaviour
     [SerializeField]
     private float angle;
 
-    private float _speed;
+    public float minAngleBetweenCollisions;
 
-    private Vector3 _reflectedVector;
+    public float _scalarValue;
 
     private Rigidbody2D rb;
 
-    private Vector2 _lastVelocity;
-
-    public float force;
-
-    private bool _addForce = false;
+    private Vector2 _directionReflected;
 
     public void Awake()
     {
@@ -36,28 +32,61 @@ public class BallController : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {     
-        _lastVelocity = rb.velocity;
+    {
+        
     }
 
     public void Init()
     {
-        Quaternion currentRotation = Quaternion.identity;
-
-        currentRotation.eulerAngles = new Vector3(0, 0, angle);
-
-        Vector3 dir = Quaternion.AngleAxis(currentRotation.eulerAngles.z, Vector3.forward) * Vector3.right;
-
-        rb.AddForce(dir * force, ForceMode2D.Impulse);
+        ResetPosition();
     }
 
-    public void ReflectBall(Vector3 normal)
+    private Vector2 GetRandomDirection()
     {
-        _speed = _lastVelocity.magnitude;
+        float x = Random.Range(-1, 2);
+        float y = Random.Range(-1, 2);
 
-        _reflectedVector = Vector3.Reflect(_lastVelocity.normalized, normal);
+        while(x == 0 || y == 0)
+        {
+            if(x == 0)
+            {
+                x = Random.Range(-1, 2);
+            }
+            else if(y == 0)
+            {
+                 y = Random.Range(-1, 2);
+            }
+        }
 
-        rb.velocity = _reflectedVector * _speed;
+        Debug.Log("x" + x + "y" + y);
+        return new Vector2(x * _scalarValue, y * _scalarValue);
+    }
 
+    public void ResetPosition()
+    {
+        transform.position = new Vector2(0, 0);
+
+        rb.velocity = GetRandomDirection();
+    }
+
+    public void ReflectBall(Vector2 normal, Vector2 relativeVelocity)
+    {
+        Debug.Log("normal " + normal);
+
+        Debug.Log("relative velocity normalized " + relativeVelocity.normalized);
+
+        Debug.Log("relative velocity " + relativeVelocity);
+
+        _directionReflected = Vector2.Reflect(relativeVelocity, normal);
+
+        Debug.Log("reflected " + _directionReflected);
+
+        float currentSpeed = rb.velocity.magnitude;
+
+        rb.velocity = _directionReflected.normalized * _scalarValue;
+
+        Debug.Log("reflected normalized" + _directionReflected.normalized);
+
+        Debug.Log("new velocity" + rb.velocity);   
     }
 }

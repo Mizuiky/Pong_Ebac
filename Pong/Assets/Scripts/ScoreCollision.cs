@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class ScoreCollision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
+        if(collision.CompareTag("Player"))
+        {
+            BallController ball = collision.gameObject.GetComponent<BallController>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            if(ball != null)
+            {
+                ball.ResetPosition();
+
+            }
+        }
     }
 }

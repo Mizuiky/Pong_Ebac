@@ -13,11 +13,12 @@ public class EdgeCollision : MonoBehaviour
     {
         if(collision.gameObject.CompareTag(tagToCompare))
         {
-            _contactPoint = collision.GetContact(0);
+
+            _contactPoint = collision.contacts[0];
 
             _ball = collision.gameObject.GetComponent<BallController>();
 
-            _ball.ReflectBall(_contactPoint.normal);
+            _ball.ReflectBall(_contactPoint.normal, _contactPoint.relativeVelocity);
         }
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 117633891617179851}
   - component: {fileID: 8737786080630384916}
   - component: {fileID: 3744330290092700088}
+  - component: {fileID: 7682616155844825211}
   m_Layer: 6
   m_Name: Bar_Player2
   m_TagString: Player
@@ -115,7 +116,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.02411595}
+  m_Offset: {x: -0.06494784, y: -0.004146576}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -126,7 +127,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.3054678}
+  m_Size: {x: 1.3896842, y: 1.0982089}
   m_EdgeRadius: 0
 --- !u!50 &3744330290092700088
 Rigidbody2D:
@@ -149,3 +150,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &7682616155844825211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117633891617179846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65fd6e45c934ef4ebb4edf84682012b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToCompare: Ball
