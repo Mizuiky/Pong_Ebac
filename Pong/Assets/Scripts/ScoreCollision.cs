@@ -29,8 +29,6 @@ public class ScoreCollision : MonoBehaviour
                 {
                     audioSource.clip = clip;
                     audioSource.Play();
-
-                    audioSource.clip = null;
                 }                
             }
         }

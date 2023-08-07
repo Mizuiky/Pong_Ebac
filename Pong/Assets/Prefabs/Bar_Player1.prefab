@@ -143,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagToCompare: Ball
   audioSource: {fileID: 0}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: ba6a6c87ab7027d4387c3a27181a03c3, type: 3}
 --- !u!50 &7045986416875407585
 Rigidbody2D:
   serializedVersion: 4

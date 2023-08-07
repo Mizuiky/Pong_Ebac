@@ -12,7 +12,9 @@ public enum PlayerType
 public class ScoreController: MonoBehaviour
 {
     public List<ScoreSetup> scores;
-    public int maxScoreToWin;
+    public SO_Score maxScore;
+
+    private int maxScoreToWin;
 
     public void Start()
     {
@@ -51,6 +53,8 @@ public class ScoreController: MonoBehaviour
         {
             setup.score.value = 0;
         }
+
+        maxScoreToWin = maxScore.value;
     }
 }
 

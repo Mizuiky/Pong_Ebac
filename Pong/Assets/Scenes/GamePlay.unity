@@ -263,7 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagToCompare: Ball
   audioSource: {fileID: 1007760178}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 8a3082a072075a54eb68ed966d8bff78, type: 3}
 --- !u!1 &165135622
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,7 +546,7 @@ MonoBehaviour:
     playerType: 0
   - score: {fileID: 11400000, guid: 01d0a5308016e074c99a4eee363fc895, type: 2}
     playerType: 1
-  maxScoreToWin: 3
+  maxScore: {fileID: 11400000, guid: e7af644a12a39a849827de3c6a328e84, type: 2}
 --- !u!1 &411874728
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,7 +619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1007760178}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 3239f21f916951045b3a43183e1a6a45, type: 3}
   tagToCompare: Ball
   player: 1
 --- !u!1 &484875168
@@ -1999,7 +1999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagToCompare: Ball
   audioSource: {fileID: 1007760178}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 8a3082a072075a54eb68ed966d8bff78, type: 3}
 --- !u!1 &1007760176
 GameObject:
   m_ObjectHideFlags: 0
@@ -3301,7 +3301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1007760178}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 3239f21f916951045b3a43183e1a6a45, type: 3}
   tagToCompare: Ball
   player: 0
 --- !u!1 &1889011787
@@ -3913,6 +3913,10 @@ PrefabInstance:
       value: Bar_Player1
       objectReference: {fileID: 0}
     - target: {fileID: 8209411533001473955, guid: 1361888040dd07f4f994f836252c8a0a, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a3082a072075a54eb68ed966d8bff78, type: 3}
+    - target: {fileID: 8209411533001473955, guid: 1361888040dd07f4f994f836252c8a0a, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1007760178}
@@ -3932,66 +3936,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1623225203}
     m_Modifications:
-    - target: {fileID: 248125199, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
-      propertyPath: m_Mass
-      value: 0.0001
-      objectReference: {fileID: 0}
-    - target: {fileID: 248125199, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 248125199, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
-      propertyPath: m_Simulated
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 248125199, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 248125199, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 248125199, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 248125199, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 248125199, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 248125200, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
-      propertyPath: angle
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 248125200, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
-      propertyPath: force
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 248125200, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
-      propertyPath: speed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 248125200, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
-      propertyPath: maxSpeed
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 248125200, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
-      propertyPath: minVelocity
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 248125200, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
-      propertyPath: _scalarValue
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 248125200, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
-      propertyPath: minAngleBetweenCollisions
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6304179167695484892, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
       propertyPath: m_Name
       value: Ball
@@ -3999,14 +3943,6 @@ PrefabInstance:
     - target: {fileID: 6304179167695484893, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
       propertyPath: m_RootOrder
       value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6304179167695484893, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 6304179167695484893, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 6304179167695484893, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4123,6 +4059,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7682616155844825211, guid: 1a4e6e552f8d4ef49bce75348e17e83e, type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a3082a072075a54eb68ed966d8bff78, type: 3}
     - target: {fileID: 7682616155844825211, guid: 1a4e6e552f8d4ef49bce75348e17e83e, type: 3}
       propertyPath: audioSource
       value: 

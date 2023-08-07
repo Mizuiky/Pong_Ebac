@@ -10,8 +10,13 @@ public class MenuController : MonoBehaviour
     public Color textColor;
     public TextMeshProUGUI menuTitle;
 
+    public SO_Score maxScore;
+    public TextMeshProUGUI maxScoreToWin;
 
     public GameObject ruleText;
+
+    public AudioClip menuClip;
+    public AudioSource audioSource;
 
     private int index;
     private TextMeshProUGUI[] menuText;
@@ -65,6 +70,7 @@ public class MenuController : MonoBehaviour
         textColor = Color.blue;
         ruleText.SetActive(false);
         menuText = new TextMeshProUGUI[menuButton.Length];
+        maxScoreToWin.text = maxScore.value.ToString();
 
         for (int i = 0; i < menuButton.Length; i++)
         {
@@ -81,6 +87,12 @@ public class MenuController : MonoBehaviour
 
             else
                 menuText[i].color = Color.white;
-        }        
+        }
+
+        if (audioSource != null && menuClip != null)
+        {
+            audioSource.clip = menuClip;
+            audioSource.Play();
+        }
     }
 }

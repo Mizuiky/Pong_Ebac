@@ -27,8 +27,6 @@ public class EdgeCollision : MonoBehaviour
             {
                 audioSource.clip = clip;
                 audioSource.Play();
-
-                audioSource.clip = null;
             }
         }
     }

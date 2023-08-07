@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
-    [SerializeField]
-    private float angle;
-
-    public float minAngleBetweenCollisions;
-
     public float _scalarValue;
 
-    private Rigidbody2D rb;
+    private Rigidbody2D _rb;
 
     private Vector2 _directionReflected;
 
@@ -19,7 +14,7 @@ public class BallController : MonoBehaviour
 
     public void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     void Start()
@@ -78,7 +73,7 @@ public class BallController : MonoBehaviour
         {
             transform.position = new Vector2(0, 0);
 
-            rb.velocity = GetRandomDirection();
+            _rb.velocity = GetRandomDirection();
         }       
     }
 
@@ -88,7 +83,7 @@ public class BallController : MonoBehaviour
 
         transform.position = new Vector2(0, 0);
 
-        rb.velocity = Vector2.zero;
+        _rb.velocity = Vector2.zero;
     }
 
     public void ReflectBall(Vector2 normal, Vector2 relativeVelocity)
@@ -103,12 +98,12 @@ public class BallController : MonoBehaviour
 
         Debug.Log("reflected " + _directionReflected);
 
-        float currentSpeed = rb.velocity.magnitude;
+        float currentSpeed = _rb.velocity.magnitude;
 
-        rb.velocity = _directionReflected.normalized * _scalarValue;
+        _rb.velocity = _directionReflected.normalized * _scalarValue;
 
         Debug.Log("reflected normalized" + _directionReflected.normalized);
 
-        Debug.Log("new velocity" + rb.velocity);   
+        Debug.Log("new velocity" + _rb.velocity);   
     }
 }
