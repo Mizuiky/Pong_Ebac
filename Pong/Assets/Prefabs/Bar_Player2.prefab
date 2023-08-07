@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 117633891617179849}
   - component: {fileID: 117633891617179851}
   - component: {fileID: 8737786080630384916}
-  - component: {fileID: 3744330290092700088}
   - component: {fileID: 7682616155844825211}
+  - component: {fileID: 505666588298071086}
   m_Layer: 6
   m_Name: Bar_Player2
   m_TagString: Player
@@ -129,27 +129,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3896842, y: 1.0982089}
   m_EdgeRadius: 0
---- !u!50 &3744330290092700088
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 117633891617179846}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
 --- !u!114 &7682616155844825211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,3 +142,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagToCompare: Ball
+  audioSource: {fileID: 0}
+  clip: {fileID: 0}
+--- !u!50 &505666588298071086
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117633891617179846}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5

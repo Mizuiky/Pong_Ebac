@@ -12,6 +12,7 @@ public enum PlayerType
 public class ScoreController: MonoBehaviour
 {
     public List<ScoreSetup> scores;
+    public int maxScoreToWin;
 
     public void Start()
     {
@@ -26,11 +27,25 @@ public class ScoreController: MonoBehaviour
         {
             setup.score.value += 1;
 
-            GameManager.Instance.uiController.SetScoreText(setup.playerType, setup.score.value);
+            CheckScore(setup);          
         }      
     }
 
-    private void ResetScores()
+    private void CheckScore(ScoreSetup setup)
+    {
+        if(setup.score.value >= maxScoreToWin)
+        {
+            GameManager.Instance.uiController.SetWinner(setup.playerType.ToString(), true);
+
+            GameManager.Instance.StartGameOver();
+
+            return;
+        }
+
+        GameManager.Instance.uiController.SetScoreText(setup.playerType, setup.score.value);
+    }
+
+    public void ResetScores()
     {
         foreach(ScoreSetup setup in scores)
         {

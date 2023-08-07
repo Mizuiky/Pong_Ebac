@@ -18,14 +18,24 @@ public class MovementController : MonoBehaviour
 
     private Vector2 _movement;
 
-    private Rigidbody2D rb;
+    private Rigidbody2D _rb;
 
     private bool _isMoving;
+
+    private Vector2 _initialPosition;
+
+    private bool _isGameRunning = false;
 
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
+        _initialPosition = transform.position;
+
+        _isGameRunning = true;
+
+        GameManager.Instance.onResetGame += ResetBarPosition;
+        GameManager.Instance.onGameOver += SetIsGameRunning;
     }
 
     void Update()
@@ -47,7 +57,7 @@ public class MovementController : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if(_isMoving)
+        if(_isMoving && _isGameRunning)
         {
             move();
         }
@@ -55,12 +65,24 @@ public class MovementController : MonoBehaviour
         {
             _movement = new Vector2(0, 0);
 
-            rb.velocity = _movement;
+            _rb.velocity = _movement;
         }       
     }
 
     private void move()
     {
-        rb.velocity += _movement * speed * Time.deltaTime;
+        _rb.velocity += _movement * speed * Time.deltaTime;
+    }
+
+    private void ResetBarPosition()
+    {
+        transform.position = _initialPosition;
+
+        _isGameRunning = true;
+    }
+
+    private void SetIsGameRunning()
+    {
+        _isGameRunning = false;
     }
 }

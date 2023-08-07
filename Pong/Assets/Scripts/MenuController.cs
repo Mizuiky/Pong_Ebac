@@ -8,22 +8,24 @@ public class MenuController : MonoBehaviour
 {
     public Button [] menuButton;
     public Color textColor;
-    public float duration;
+    public TextMeshProUGUI menuTitle;
+
 
     public GameObject ruleText;
 
     private int index;
     private TextMeshProUGUI[] menuText;
-    private int upArrowIndex;
-
+   
     void Start()
     {
         Init();
+        
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.DownArrow))
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             index++;
 
@@ -80,15 +82,5 @@ public class MenuController : MonoBehaviour
             else
                 menuText[i].color = Color.white;
         }        
-    }
-
-    private void ChangeTitleColor()
-    {
-        var time = 0f
-
-        if( time < duration)
-        {
-
-        }
     }
 }

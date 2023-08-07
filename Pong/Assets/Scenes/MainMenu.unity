@@ -205,6 +205,7 @@ MonoBehaviour:
   - {fileID: 2104087584}
   - {fileID: 1429675673}
   textColor: {r: 0.26900145, g: 0.4833427, b: 0.8773585, a: 0}
+  menuTitle: {fileID: 474837939}
   ruleText: {fileID: 584512314}
 --- !u!1 &474837937
 GameObject:
@@ -1072,7 +1073,6 @@ GameObject:
   - component: {fileID: 1078452442}
   - component: {fileID: 1078452441}
   - component: {fileID: 1078452440}
-  - component: {fileID: 1078452439}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1080,20 +1080,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1078452439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078452438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a772999c171f2da47b3e476a8f3e363b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scorePlayer1: {fileID: 0}
-  scorePlayer2: {fileID: 0}
 --- !u!114 &1078452440
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,6 +8,14 @@ public class UIController : MonoBehaviour
     public TextMeshProUGUI scorePlayer1;
     public TextMeshProUGUI scorePlayer2;
 
+    public TextMeshProUGUI winnerText;
+    public GameObject winnerScreen;
+
+    public void Start()
+    {
+        Init();
+    }
+
     public void SetScoreText(PlayerType player, int value)
     {
         switch(player)
@@ -19,5 +27,23 @@ public class UIController : MonoBehaviour
                 scorePlayer2.text = value.ToString();
                 break;
         }
+    }
+
+    private void Init()
+    {
+        winnerScreen.SetActive(false);
+
+        scorePlayer1.text = "0";
+        scorePlayer2.text = "0";
+    }
+
+    public void SetWinner(string winner, bool active)
+    {
+        winnerText.text = winner;
+
+        winnerScreen.SetActive(active);
+
+        scorePlayer1.text =  "0";
+        scorePlayer2.text = "0";
     }
 }

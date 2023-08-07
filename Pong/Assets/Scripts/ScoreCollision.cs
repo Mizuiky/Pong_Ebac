@@ -7,21 +7,23 @@ public class ScoreCollision : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip clip;
 
-    public BallController ball;
-
     public string tagToCompare = "Ball";
 
     public PlayerType player;
+
+    private BallController _ball;
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag(tagToCompare))
         {
-            ball = collision.gameObject.GetComponent<BallController>();
+            _ball = collision.gameObject.GetComponent<BallController>();
 
-            if(ball != null)
+            if(_ball != null)
             {
                 GameManager.Instance.scoreController.SetPoints(player);
+
+                _ball.ResetBall();
 
                 if (audioSource != null && clip != null)
                 {
@@ -29,9 +31,7 @@ public class ScoreCollision : MonoBehaviour
                     audioSource.Play();
 
                     audioSource.clip = null;
-                }
-
-                ball.ResetPosition();
+                }                
             }
         }
     }

@@ -15,6 +15,8 @@ public class BallController : MonoBehaviour
 
     private Vector2 _directionReflected;
 
+    public bool _isGameRunning = false;
+
     public void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -23,6 +25,8 @@ public class BallController : MonoBehaviour
     void Start()
     {
         Init();
+
+        GameManager.Instance.onGameOver += StopBall;
     }
 
     void Update()
@@ -38,6 +42,7 @@ public class BallController : MonoBehaviour
 
     public void Init()
     {
+        _isGameRunning = true;
         ResetPosition();
     }
 
@@ -62,11 +67,28 @@ public class BallController : MonoBehaviour
         return new Vector2(x * _scalarValue, y * _scalarValue);
     }
 
+    public void ResetBall()
+    {
+        Invoke("ResetPosition", 0.2f);
+    }
+
     public void ResetPosition()
     {
+        if(_isGameRunning)
+        {
+            transform.position = new Vector2(0, 0);
+
+            rb.velocity = GetRandomDirection();
+        }       
+    }
+
+    private void StopBall()
+    {
+        _isGameRunning = false;
+
         transform.position = new Vector2(0, 0);
 
-        rb.velocity = GetRandomDirection();
+        rb.velocity = Vector2.zero;
     }
 
     public void ReflectBall(Vector2 normal, Vector2 relativeVelocity)
