@@ -621,7 +621,7 @@ MonoBehaviour:
   audioSource: {fileID: 1007760178}
   clip: {fileID: 8300000, guid: 3239f21f916951045b3a43183e1a6a45, type: 3}
   tagToCompare: Ball
-  player: 1
+  player: 0
 --- !u!1 &484875168
 GameObject:
   m_ObjectHideFlags: 0
@@ -3303,7 +3303,7 @@ MonoBehaviour:
   audioSource: {fileID: 1007760178}
   clip: {fileID: 8300000, guid: 3239f21f916951045b3a43183e1a6a45, type: 3}
   tagToCompare: Ball
-  player: 0
+  player: 1
 --- !u!1 &1889011787
 GameObject:
   m_ObjectHideFlags: 0
@@ -3936,6 +3936,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 1623225203}
     m_Modifications:
+    - target: {fileID: 248125200, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
+      propertyPath: _velocityScalarValue
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 6304179167695484892, guid: 55bf1166746556144a753e34af7b7aa2, type: 3}
       propertyPath: m_Name
       value: Ball

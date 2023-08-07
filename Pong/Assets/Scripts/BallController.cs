@@ -6,6 +6,8 @@ public class BallController : MonoBehaviour
 {
     public float _scalarValue;
 
+    public float _velocityScalarValue;
+
     private Rigidbody2D _rb;
 
     private Vector2 _directionReflected;
@@ -100,9 +102,11 @@ public class BallController : MonoBehaviour
 
         float currentSpeed = _rb.velocity.magnitude;
 
-        _rb.velocity = _directionReflected.normalized * _scalarValue;
-
         Debug.Log("reflected normalized" + _directionReflected.normalized);
+
+        _scalarValue += _scalarValue * _velocityScalarValue;
+
+        _rb.velocity = _directionReflected.normalized * _scalarValue;    
 
         Debug.Log("new velocity" + _rb.velocity);   
     }
